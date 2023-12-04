@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90vw;
+        max-width: 1245px;
+        margin: 0 auto;
+}

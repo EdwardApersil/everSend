@@ -1,0 +1,82 @@
+.hero {
+    background-color: #5A50FE;
+    border-radius: 20px;
+    padding: 1rem;
+    height: 970px;
+}
+
+.play{
+    background-color: #4D44DF;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.app{
+    background-color: #4D44DF;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.content h1{
+    color: white;
+    font-size: 30px;
+    width: 370px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.content h3{
+    color: #FDBF50;
+    font-size: 40px;
+    width: 500px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 780px) {
+    .hero{
+        display: flex;
+        justify-content: space-evenly;
+        height: 749px;
+    }
+    .container {
+        width: 90vw;
+        max-width: 1245px;
+        margin: 0 auto;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .content h1{
+        color: white;
+        font-size: 40px;
+        width: 500px;
+        text-align: left;
+        font-weight: bolder;
+    }
+
+    .content h3{
+        color: #FDBF50;
+        font-size: 40px;
+        width: 500px;
+        text-align: left;
+        font-weight: bolder;
+    }
+
+    .play{
+        background-color: #4D44DF;
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+    }
+
+    .app{
+        background-color: #4D44DF;
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+    }
+
+   
+}
