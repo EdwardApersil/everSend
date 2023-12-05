@@ -1,5 +1,9 @@
+.container{
+    background-image: url("../../../assets/svg/hero-background.svg");
+    border-radius: 20px;
+}
 .hero {
-    background-color: #5A50FE;
+    /* background-color: #5A50FE; */
     border-radius: 20px;
     padding: 1rem;
     height: 970px;
@@ -43,7 +47,7 @@
     }
     .container {
         width: 90vw;
-        max-width: 1245px;
+        max-width: 1445px;
         margin: 0 auto;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }

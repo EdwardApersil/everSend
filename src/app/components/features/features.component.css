@@ -1,0 +1,93 @@
+.container {
+    width: 90vw;
+    max-width: 1445px;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 780px) {
+    .features {
+        display: flex;
+        justify-content: space-evenly;
+        height: 749px;
+    }
+
+    .container {
+        width: 90vw;
+        max-width: 1445px;
+        margin: 0 auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card {
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        margin-left: 10rem;
+        border-radius: 10px;
+    }
+
+}
+
+.title{
+    background-color: #F9F5FF;
+    border-radius: 20px;
+    color: blue;
+    padding: 6px;
+    width: 100px;
+    margin: auto;
+}
+
+.content h2{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #040052;
+}
+
+.content p{
+    font-size: 20px;
+    text-align: center;
+    color: #979797;
+    width: 500px;
+    margin: auto;
+}
+
+.blue {
+    background-color: #F6F6F9;
+    border-radius: 20px;
+}
+
+.exchange {
+    background-color: #F5E5FF;
+    border-radius: 20px;
+}
+
+.debit {
+    background-color: #F3F3F3;
+    border-radius: 20px;
+}
+
+.stock {
+    background-color: #ECEBFF;
+    border-radius: 20px;
+}
+
+.text h3 {
+    margin-top: 3rem;
+    font-size: 40px;
+    width: 500px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.text p {
+    font-size: 20px;
+    width: 400px;
+    text-align: left;
+}
+
+img {
+    width: 500px;
+    height: 400px;
+}

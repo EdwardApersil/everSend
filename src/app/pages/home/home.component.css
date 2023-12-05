@@ -1,4 +1,71 @@
+
 .feature h2{
     font-size: 20px;
     color: rgb(122, 122, 122);
+}
+
+.map {
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Place the text above the image */
+  }
+
+  .content h2{
+    font-size: 45px;
+    color: #040052;
+  }
+
+  .content h1{
+    font-size: 70px;
+    font-weight: bold;
+    color: #040052;
+  }
+
+  .content p{
+    font-size: 20px;
+    color: #040052;
+  }
+  
+  .map img {
+    width: 100%; /* Make sure the image takes the full width of its container */
+    height: auto; 
+    z-index: 1; /* Place the image below the text */
+  }
+
+  .b-main{
+    width: 90vw;
+    max-width: 1445px;
+    margin: 0 auto;
+}
+
+.b-content p{
+    width: 450px;
+    font-size: 20px;
+}
+
+.started{
+  /* width: 90vw; */
+  max-width: 1445px;
+  margin: auto;
+  margin-bottom: 4cqmax;
+}
+  
+.start-content h2{
+  font-size: 39px;
+}
+
+.start-content h5{
+  border-radius: 50%;
+  width: auto;
+  background-color: aliceblue;
+  padding: 15px;
 }
