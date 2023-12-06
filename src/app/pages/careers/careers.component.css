@@ -1,0 +1,60 @@
+.career-container{
+    width: 90vw;
+    max-width: 1325px;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.blur {
+    filter: blur(5px); /* Adjust the blur amount as needed */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Adjust the text color as needed */
+}
+
+.head-text{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+.jobs{
+    margin:0 auto;
+}
+
+
+.react{
+    padding: 10px;
+    background-color: #F3F3F3;
+    width: 750px;
+    border-radius: 20px;
+}
+
+.job button{
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+}
+.team img{
+    border-radius: 20px;
+}
+
+.team p{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+}

@@ -7,9 +7,9 @@ import { Component, NgZone } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  readonly messages = ["Receive money", "Create virtual USD cards", "Send money", "Currency exchange"];
+  readonly messages = ["Receive money", "Create virtual USD cards", "Currency exchange", "Send money",];
   currentMessageIndex: number = 0;
-  currentMessage: string = '';
+  currentMessage: string = 'Send Money';
 
   constructor(private ngZone: NgZone) {}
 

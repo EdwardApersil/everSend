@@ -1,0 +1,72 @@
+.container {
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.lightblue {
+    background-color: #ECEBFF;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.yellow {
+    background-color: #FFF8E6;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.yellow1{
+    background-color: #FFF8E6;
+    height: 300px;
+    width: 620px;
+    border-radius: 25px;
+}
+
+.green {
+    background-color: #DAFEC7;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.violent {
+    background-color: #F9E5FF;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+
+}
+
+.deepblue {
+    background-color: #D0CDFF;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.cream {
+    background-color: #E5F6FF;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+img {
+    width: 150px;
+    height: 120px;
+}
+
+.number {
+
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    /* Adjust the size as needed */
+    height: 40px;
+    /* Adjust the size as needed */
+    background-color: white;
+}
