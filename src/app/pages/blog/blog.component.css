@@ -1,0 +1,20 @@
+.container{
+    width: 90vw;
+    max-width: 1375px;
+    margin: 0 auto;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.post:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+  

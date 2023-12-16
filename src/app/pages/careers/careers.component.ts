@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class CareersComponent {
 
+
+  submit(){
+    alert("Thank you for your interest in joining our team. We will get back to you soon.");
+  }
+
 }

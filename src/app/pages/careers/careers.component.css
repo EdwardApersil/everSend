@@ -4,6 +4,15 @@
     margin: 0 auto;
 }
 
+.title{
+    background-color: #F9F5FF;
+    border-radius: 20px;
+    color: blue;
+    padding: 6px;
+    width: 100px;
+    text-align: center;
+}
+
 .container {
     position: relative;
 }
@@ -57,4 +66,27 @@
     text-align: center;
     width: 600px;
     margin: 0 auto;
+}
+
+
+.talent{
+    margin-top: 4rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.form button{
+    width: 150px;
+    text-align: center;
+}
+
+.talent p{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+input:focus{
+    outline: none;
+    border: none;
 }
