@@ -4,21 +4,20 @@ import { PostService } from '../service/blog.service';
 import { CommonModule } from '@angular/common';
 import { Photos } from '../photos';
 
-
 @Component({
   selector: 'app-blog',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrls: ['./blog.component.css']
 })
-export class BlogComponent implements OnInit{
+export class BlogComponent implements OnInit {
   post: Post[] = [];
-  images: any[] = [];
+  filteredPosts: Post[] = [];
 
-
-  numberOfPosts: number = 30;
+  numberOfPosts: number = 60;
   numberOfPhotos: number = 30;
+  isLoading = false;
 
   constructor(
     private postService: PostService
@@ -26,48 +25,36 @@ export class BlogComponent implements OnInit{
 
   ngOnInit() {
     this.getPost();
-    this.getPhotos();
   }
 
   private getPost() {
-    this.postService.getAllPost()
+    this.isLoading = true; // Set loading to true before making the API call
+    this.postService.getFinanceNews()
       .subscribe(
-        (res: any) => {
-          this.post = res;
-          console.log(res);
-          console.log("Hello")
+        (posts: Post[]) => {
+          this.post = posts;
+          this.filterPosts('');
+          this.isLoading = false; // Set loading to false when data is loaded
         },
         (error) => {
           console.error("Error fetching post", error);
-          // additional error handling here  
+          this.isLoading = false; // Set loading to false in case of an error
         }
       );
   }
 
-  private getPhotos() {
-    this.postService.getPhotos()
-     .subscribe(
-        (res: any) => {
-          this.images = res;
-          console.log(res);
-          console.log("Hello")
-          // additional error handling here
-          this.postWithPhoto();
-        },
-        (error) => {
-          console.error("Error fetching post", error);
-          // additional error handling here  
-        }
-      );
+  filterPosts(text: string) {
+    if (!text) {
+      this.filteredPosts = this.post;
+    } else {
+      const searchTerm = text.toLowerCase();
+      this.filteredPosts = this.post.filter((post) => {
+        return post.title.toLowerCase().includes(searchTerm);
+      });
+    }
   }
 
-  private postWithPhoto(){
-    this.post.forEach((post: any) => {
-      const postImages = this.images.filter((images: any) =>{
-        return images.postId === post.id
-      })
-      post.photos = postImages.slice(0, 30);
-    })
+  getArrayOf(number: number): any[] {
+    return Array(number);
   }
-
 }

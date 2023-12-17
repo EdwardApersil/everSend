@@ -1,19 +1,22 @@
-<div class="my-8">
-    <div class="nav my-8">
-        <div class="logo">
-            <a routerLink="home" class="text-blue-800 font-bold"><img
-                src="../../assets/svg/Slush.svg"
-                height="100"
-                width="100"
-                alt="hero image"
-              /></a>
-        </div>
-        <div class="nav-links flex gap-10">
-            <a routerLink="home" routerLinkActive="active">Home</a>
-            <a routerLink="about" routerLinkActive="active">About</a>
-            <a routerLink="blog" routerLinkActive="active">Blog</a>
-            <a routerLink="careers" routerLinkActive="active">Careers</a>
-            <a routerLink="about" routerLinkActive="active">FAQs</a>
-        </div>
+<div class="container mx-auto px-4 md:px-8 lg:px-16">
+    <div class="nav my-8 flex md:justify-between">
+      <div class="logo flex items-center">
+        <a routerLink="home" class="text-blue-800 font-bold">
+          <img
+            src="../../assets/svg/Slush.svg"
+            height="100"
+            width="100"
+            alt="hero image"
+          />
+        </a>
+      </div>
+      <div class="nav-links flex gap-10 md:gap-4 lg:gap-8">
+        <a routerLink="home" routerLinkActive="active" class="px-2 py-1 rounded">Home</a>
+        <a routerLink="about" routerLinkActive="active" class="px-2 py-1 rounded">About</a>
+        <a routerLink="blog" routerLinkActive="active" class="px-2 py-1 rounded">Blog</a>
+        <a routerLink="careers" routerLinkActive="active" class="px-2 py-1 rounded">Careers</a>
+        <a routerLink="stock" routerLinkActive="active" class="px-2 py-1 rounded md:inline-block hidden">Stocks</a>
+      </div>
     </div>
-</div>
+  </div>
+  

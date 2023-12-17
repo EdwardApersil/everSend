@@ -1,36 +1,43 @@
-import { Post } from './../post';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Photos } from '../photos';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PostService {
-  apiUrl: string = 'https://jsonplaceholder.typicode.com/posts';
-  photoUrl: string = 'https://jsonplaceholder.typicode.com/photos'
+
+  private headers = {
+    'X-RapidAPI-Key': 'fffdd10405msha088a564a6518bap1acc05jsn27a6c9908b21',
+    'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com'
+  };
+
+
 
   constructor(private http: HttpClient) {}
 
-  getAllPost(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.apiUrl).pipe(
+
+  getFinanceNews(): Observable<any> {
+    const url = 'https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8';
+
+    return this.http.get<any>(url, { headers: this.headers }).pipe(
       catchError((error) => {
-        // Handle error and return a new observable
-        console.error(error);
-        return of([] as Post[]); // Alternatively, you could throw the error again
+        console.error('Error fetching finance news:', error);
+        return of([]);
       })
     );
   }
 
-  getPhotos(): Observable<Photos[]>{
-    return this.http.get<Photos[]>(this.photoUrl).pipe(
+  getStocks(): Observable<any> {
+    const url = 'https://ms-finance.p.rapidapi.com/stock/v2/get-realtime-data?performanceId=0P0000OQN8';
+
+    return this.http.get<any>(url, { headers: this.headers }).pipe(
       catchError((error) => {
-        // Handle error and return a new observable
-        console.error(error);
-        return of([]); // Alternatively, you could throw the error again
+        console.error('Error fetching finance news:', error);
+        return of([]);
       })
-    )
+    );
   }
+
 }

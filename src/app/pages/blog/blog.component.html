@@ -1,25 +1,38 @@
-<div class="container">
-    <form action="" class="m-auto">
-        <input class="" type="text" placeholder="search post here">
+<div class="container mt-20">
+    <form action="" class="m-auto mb-5  gap-2">
+        <input class="" type="text" placeholder="search post here" #filter>
+        <button class="p-4 bg-blue-800 text-white ml-3 rounded-md" (click)="filterPosts(filter.value)">Search</button>
     </form>
-    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-7">
-        <div *ngFor="let post of post | slice:0:numberOfPosts" class="post mx-auto">
-            <div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-8">
-                <img class="w-full h-48 object-cover object-center" src="https://res.cloudinary.com/practicaldev/image/fetch/s--JvNg6LJ---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/i/5ct9nhbw6gdpb8dh0yy1.png" alt="Post Image">
-                <!-- <div *ngFor="let image of images.slice(0, numberOfPhotos)">
-                    <img src={{image.url}} alt="Post image">
-                </div> -->
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">{{ post.title }}</div>
-                    <p class="text-gray-700 text-base">{{ post.body }}</p>
-                </div>
-                <div class="px-6 py-4">
-                    <span
-                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Tag1</span>
-                    <span
-                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#Tag2</span>
+    <div *ngIf="isLoading; else content">
+        <!-- Skeleton loading template -->
+        <div class="skeleton-placeholder" *ngFor="let _ of getArrayOf(numberOfPosts)"></div>
+    </div>
+    
+    <ng-template #content>
+        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-7" #content>
+            <div *ngFor="let post of filteredPosts | slice: 0: numberOfPosts" class="post mx-auto">
+                <div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-8">
+                    <img class="w-full h-48 object-cover object-center" src="https://www.wealthandfinance-news.com/wp-content/uploads/2021/09/Stock-Market.jpg" alt="Post Image">
+    
+                    <div class="px-6 py-4">
+                        <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{ post.sourceName }}</p>
+                        <div class="font-bold text-xl mb-2">{{ post.title }}</div>
+                        <div class="flex justify-between">
+                            <p class="text-gray-700 text-base bg-blue-300 p-1 rounded-md">{{ post.providerName }}</p>
+                            <p class="text-gray-700 text-base">{{ post.publishedDate }}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4">
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Tag1</span>
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#Tag2</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-template>
+    <ng-template #noResults>
+        <p>No results found.</p>
+    </ng-template>
 </div>

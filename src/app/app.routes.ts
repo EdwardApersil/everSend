@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CareersComponent } from './pages/careers/careers.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { StocksComponent } from './pages/stocks/stocks.component';
 
 export const routes: Routes = [
     {
@@ -24,5 +25,9 @@ export const routes: Routes = [
     {
         path: 'blog',
         component: BlogComponent
+    },
+    {
+        path: 'stock',
+        component: StocksComponent
     }
 ];
