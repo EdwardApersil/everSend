@@ -1,1 +1,29 @@
-<p>stocks works!</p>
+
+<div class="container mt-20">
+    
+
+    <table class="min-w-full border rounded-md border-gray-300">
+        <thead>
+            <tr class="bg-blue-600 text-white ">
+                <th class="border border-gray-300 px-4 py-2">Symbol</th>
+                <th class="border border-gray-300 px-4 py-2">Company Name</th>
+                <th class="border border-gray-300 px-4 py-2">Currency</th>
+                <th class="border border-gray-300 px-4 py-2">Last Price</th>
+                <th class="border border-gray-300 px-4 py-2">Market Status</th>
+                <th class="border border-gray-300 px-4 py-2">Net Change</th>
+                <!-- Add more headers based on your data -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stock of stocks[1]" >
+                <td class="border border-gray-300 px-4 py-2  text-yellow-500">{{ stock.symbol }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ stock.companyName }}</td>
+                <td class="border border-gray-300 px-4 py-2 text-green-700">{{ stock.currency }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ stock.lastPrice }}</td>
+                <td class="border border-gray-300 px-4 py-2 text-blue-700">{{ stock.marketStatus }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ stock.netChange }}</td>
+                <!-- Add more columns based on your data -->
+            </tr>
+        </tbody>
+    </table>
+</div>
