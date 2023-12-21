@@ -13,8 +13,6 @@ export class PostService {
     'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com'
   };
 
-
-
   constructor(private http: HttpClient) {}
 
 
@@ -30,11 +28,11 @@ export class PostService {
   }
 
   getStocks(): Observable<any> {
-    const url = 'https://ms-finance.p.rapidapi.com/stock/v2/get-realtime-data?performanceId=0P0000OQN8';
+    const url = 'https://ms-finance.p.rapidapi.com/market/get-global-indices';
 
     return this.http.get<any>(url, { headers: this.headers }).pipe(
       catchError((error) => {
-        console.error('Error fetching finance news:', error);
+        console.error('Error fetching stocks:', error);
         return of([]);
       })
     );
