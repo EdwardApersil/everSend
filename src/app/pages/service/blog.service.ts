@@ -18,7 +18,6 @@ export class PostService {
 
   getFinanceNews(): Observable<any> {
     const url = 'https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8';
-
     return this.http.get<any>(url, { headers: this.headers }).pipe(
       catchError((error) => {
         console.error('Error fetching finance news:', error);
@@ -29,7 +28,6 @@ export class PostService {
 
   getStocks(): Observable<any> {
     const url = 'https://ms-finance.p.rapidapi.com/market/get-global-indices';
-
     return this.http.get<any>(url, { headers: this.headers }).pipe(
       catchError((error) => {
         console.error('Error fetching stocks:', error);
@@ -37,5 +35,18 @@ export class PostService {
       })
     );
   }
+
+  getMarket() : Observable<any> {
+    const url = 'https://ms-finance.p.rapidapi.com/market/'
+    return this.http.get<any>(url, {headers: this.headers}).pipe(
+      catchError((error) => {
+        console.error("Error fetching markets", error);
+        return of([])
+      })
+    )
+
+  }
+
+
 
 }

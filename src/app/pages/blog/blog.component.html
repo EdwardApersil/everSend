@@ -1,7 +1,7 @@
 <div class="container mt-20">
     <form action="" class="m-auto mb-5  gap-2">
-        <input class="" type="text" placeholder="search post here" #filter>
-        <button class="p-4 bg-blue-800 text-white ml-3 rounded-md" (click)="filterPosts(filter.value)">Search</button>
+        <input class="" type="text" placeholder="search post here" #filter (keyup)="filterPosts(filter.value)">
+        <button class="p-4 bg-blue-800 text-white ml-3 rounded-md" [disabled]="!filter.value">Search</button>
     </form>
     <div *ngIf="isLoading; else content">
         <!-- Skeleton loading template -->

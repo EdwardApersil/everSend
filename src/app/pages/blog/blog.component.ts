@@ -42,15 +42,21 @@ export class BlogComponent implements OnInit {
         }
       );
   }
-
-  filterPosts(text: string) {
+  /**
+   * Filters the list of posts based on a search term.
+   * If no search term is provided, returns the full list of posts.
+   * Otherwise, filters the posts by checking if the post titles include the search term.
+   * @param text A string representing the search term to filter the posts by.
+   */
+  filterPosts(text: string): void {
     if (!text) {
       this.filteredPosts = this.post;
     } else {
       const searchTerm = text.toLowerCase();
-      this.filteredPosts = this.post.filter((post) => {
-        return post.title.toLowerCase().includes(searchTerm);
-      });
+      this.filteredPosts = this.post.filter(post => 
+        post.title.toLowerCase().includes(searchTerm) || 
+        post.providerName.toLowerCase().includes(searchTerm) 
+      );
     }
   }
 
